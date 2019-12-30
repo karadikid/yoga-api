@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-const mongoURL = "mongodb://localhost/yoga-api"
+const mongoURL = "mongodb://myUserAdmin:$0crates@localhost:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin"
+
+//"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=adminDB"
 
 mongoose.Promise = Promise
 
