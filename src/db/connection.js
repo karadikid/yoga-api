@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 
 const mongoURL = "mongodb://myUserAdmin:$0crates@localhost:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin"
 
-//"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=adminDB"
+//"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=authDB"
+//Start Mongo with Auth:  "mongod --port 27012 --auth"
+//Login to mongo with Admin:  "mongo --port 27017 --authenticationDatabase "<authDbName>" -u <adminUserName>""
 
 mongoose.Promise = Promise
 
