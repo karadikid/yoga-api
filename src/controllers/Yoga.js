@@ -1,7 +1,7 @@
 // Controller will relate to a specific model
 // So you want to import that model here
 // Note - you can have multiple models within one controller
-const Bookmark = require("../models/Yoga")
+const Yoga = require("../models/Yoga")
 
 module.exports = {
   // Inside each controller method, you're defining the logic of your app

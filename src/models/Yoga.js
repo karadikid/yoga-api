@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const YogaSchema = new Schema({
   id: {
-    type: number,
+    type: Number,
     required: true
   },
   sanskrit_name: {
@@ -19,7 +19,7 @@ const YogaSchema = new Schema({
     type: String,
     trim: true,
   },
-  user_id: number
+  user_id: Number
 })
 
 const Yoga = mongoose.model("Yoga", YogaSchema)

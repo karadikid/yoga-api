@@ -1,5 +1,5 @@
 // Import the connection file at the top of your seed
-const mongoose = require('../db/connectionconnection')
+const mongoose = require('../db/connection')
 const data = require('../db/yoga-api.json')
 
 // Then, import your model separately
