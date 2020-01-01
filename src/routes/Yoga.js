@@ -9,4 +9,6 @@ const yogaRouter = express.Router()
 // Assign each key from my controller to a specific route
 yogaRouter.get("/", yogaController.index)
 
+yogaRouter.post('/', yogaController.create)
+
 module.exports = yogaRouter

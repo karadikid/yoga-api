@@ -13,6 +13,6 @@ Yoga.deleteMany({}).then( () => {
     process.exit()
   })
   .catch( (err) => {
-    console.log("Kalima fail: ", err)
+    console.log("Yoga fail: ", err)
   })
 })
