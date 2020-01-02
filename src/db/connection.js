@@ -1,6 +1,11 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv').config()
 
-const mongoURL = "mongodb://myUserAdmin:$0crates@localhost:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin"
+let dbHost = process.env.DB_HOST;
+let username = process.env.DB_USER;
+let password = process.env.DB_PASS;
+
+const mongoURL = `mongodb://${username}:${password}@${dbHost}/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`
 
 //"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=authDB"
 //Start Mongo with Auth:  "mongod --port 27012 --auth"
@@ -19,3 +24,6 @@ mongoose
   .catch( error => console.log("Harruken!: ", error) )
 
 module.exports = mongoose
+
+//brew install mongodb/brew/mongodb-community-shell
+//mongo "mongodb+srv://gacluster-3y49p.mongodb.net/test"  --username myUserAdmin
