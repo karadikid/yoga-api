@@ -5,8 +5,14 @@ let dbHost = process.env.DB_HOST;
 let username = process.env.DB_USER;
 let password = process.env.DB_PASS;
 
+console.log(dbHost)
+console.log(username)
+console.log(password)
+
+//Mongodb Atlas Host gacluster-3y49p.mongodb.net/test
+
 //Mongo URL LOCAL
-const mongoURL = `mongodb://${username}:${password}@${dbHost}/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`
+const mongoURL = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`
 
 //Mongo URI Atlas
 let mongoURI = "";

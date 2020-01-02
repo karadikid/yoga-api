@@ -12,20 +12,17 @@ module.exports = {
       res.json(yoga);
     });
   },
-  create: async (req, res, next) => {
-    const asana = new Yoga({
+   create: (req, res) => {
+        Yoga.create({
       id: req.body.id,
       sanskrit_name: req.body.sanskrit_name,
       english_name: req.body.english_name,
       img_url: req.body.img_url
-    });
-    try {
-      const newAsana = await asana.save();
-      return req.status(201).json(newAsana);
-    } catch (err) {
-      return req.status(400).json({ messags: err.message });
-    }
-  },
+        })
+            .then(newYogaDoc => {
+                res.json(newYogaDoc)
+            });
+    },
   update: (req, res, next) => {},
   delete: (req, res, next) => {}
 };
