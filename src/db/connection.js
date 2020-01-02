@@ -5,7 +5,17 @@ let dbHost = process.env.DB_HOST;
 let username = process.env.DB_USER;
 let password = process.env.DB_PASS;
 
+//Mongo URL LOCAL
 const mongoURL = `mongodb://${username}:${password}@${dbHost}/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`
+
+//Mongo URI Atlas
+let mongoURI = "";
+
+if (process.env.NODE_ENV === "production") {
+  mongoURI = process.env.DB_URL;
+} else {
+  mongoURI = "mongodb://localhost/book-e";
+}
 
 //"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=authDB"
 //Start Mongo with Auth:  "mongod --port 27012 --auth"
@@ -15,8 +25,9 @@ mongoose.Promise = Promise
 
 // .connect takes two arguments, one is the path to the db
 // second argument where you set your settings for the connection
+//Change mongoURL to mongoURI and vice versa for local vs. remote testing
 mongoose
-  .connect(mongoURL, {
+  .connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

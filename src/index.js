@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const yogaRoutes = require("./routes/Yoga");
 const bodyParser = require('body-parser');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv').config()
+
+let PORT = process.env.PORT;
 
 // parse requests
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -18,7 +20,11 @@ app.use(function(req, res, next) {
   });
 
 // .listen() - application will wait for requests from a specific port
-app.listen(8080, () => console.log('Port 8080, Ommmm.') )
+app.set("port", PORT || 8080);
+
+app.listen(app.get("port"), () => {
+  console.log(`✅ PORT: ${app.get("port")} 🌟`);
+});
 
 // When user requests at the root / of our application...
 // .use references a particular router
