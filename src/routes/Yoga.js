@@ -11,4 +11,6 @@ yogaRouter.get("/", yogaController.index)
 
 yogaRouter.post('/', yogaController.create)
 
+yogaRouter.post('/delete', yogaController.delete)
+
 module.exports = yogaRouter

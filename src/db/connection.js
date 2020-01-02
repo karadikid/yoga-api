@@ -5,11 +5,8 @@ let dbHost = process.env.DB_HOST;
 let username = process.env.DB_USER;
 let password = process.env.DB_PASS;
 
-console.log(dbHost)
-console.log(username)
-console.log(password)
-
 //Mongodb Atlas Host gacluster-3y49p.mongodb.net/test
+//heroku config:set DB_URL="mongodb+srv://myUserAdmin:M00ngooDb8@gacluster-3y49p.mongodb.net/test?retryWrites=true"
 
 //Mongo URL LOCAL
 const mongoURL = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`
@@ -18,9 +15,9 @@ const mongoURL = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?aut
 let mongoURI = "";
 
 if (process.env.NODE_ENV === "production") {
-  mongoURI = process.env.DB_URL;
+  mongoURL = process.env.DB_URL;
 } else {
-  mongoURI = "mongodb://localhost/book-e";
+  mongoURI = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`;
 }
 
 //"mongodb://username:password@localhost:27017/dbName?authMechanism=SCRAM-SHA-1&authSource=authDB"

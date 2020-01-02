@@ -24,7 +24,14 @@ module.exports = {
             });
     },
   update: (req, res, next) => {},
-  delete: (req, res, next) => {}
+  delete: (req, res, next) => {
+    Yoga.deleteOne({
+      english_name: req.body.english_name
+    })
+      .then(newYogaDoc => {
+        res.json(newYogaDoc)
+      })
+  }
 };
 
 //Sample Data
