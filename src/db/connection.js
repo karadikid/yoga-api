@@ -15,7 +15,7 @@ const mongoURL = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?aut
 let mongoURI = "";
 
 if (process.env.NODE_ENV === "production") {
-  mongoURL = process.env.DB_URL;
+  mongoURI = process.env.DB_URL;
 } else {
   mongoURI = `mongodb://${username}:${password}@${dbHost}:27017/yoga-api?authMechanism=SCRAM-SHA-1&authSource=admin`;
 }
