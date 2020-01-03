@@ -1,6 +1,9 @@
 # Yoga API
-Code works.
-The issue was the construction of my create promise in my controllers.js file.  Roger gave clean syntax that I was able to modify for both CREATE and DELETE.
+API of
+Sanskrit Name
+English Name
+Icon Image file from:https://github.com/rebeccaestes/yoga_api
+
 
 ## Postman guidance:
 Heroku API Endpoint:
