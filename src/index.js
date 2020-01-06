@@ -3,8 +3,10 @@ const app = express();
 const yogaRoutes = require("./routes/Yoga");
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv').config()
+const cors = require('cors')
 
 let PORT = process.env.PORT;
+app.use(cors())
 
 // parse requests
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -12,12 +14,12 @@ app.use(bodyParser.json())
 
 // app.use(express.json())
 
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
+// app.use(function(req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//     next();
+//   });
 
 // .listen() - application will wait for requests from a specific port
 app.set("port", PORT || 8080);
