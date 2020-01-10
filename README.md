@@ -9,6 +9,10 @@ Icon Image file from:https://github.com/rebeccaestes/yoga_api
 Heroku API Endpoint:
 https://yogapi.herokuapp.com/
 
+### Postman Walkthrough
+
+[![YouTubePostman](./PostmanYogAPI-Heroku.png)](https://youtu.be/Dyk5ZPxNk_A "Yogapi on Heroku")
+
 ### Get READ:
 https://yogapi.herokuapp.com/
 Returns all asanas as text.
@@ -32,5 +36,6 @@ https://yogapi.herokuapp.com/delete
     "english_name": "Wheel"
 }
 ```
+
 
 
